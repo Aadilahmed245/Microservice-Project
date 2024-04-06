@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/ratings")
 public class RatingController {
     @Autowired
     private IRating iRating;
@@ -25,7 +26,7 @@ public class RatingController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Rating not saved successfully !!!");
         }
     }
-    @GetMapping("/get-all-ratings")
+    @GetMapping
     public ResponseEntity<List<Rating>> getAllRatings()
     {
         List<Rating> ratings =   iRating.getAllRatings();

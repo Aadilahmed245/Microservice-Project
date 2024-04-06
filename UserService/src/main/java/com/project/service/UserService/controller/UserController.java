@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
     @Autowired
     private IUser iUser;
@@ -25,7 +26,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Users not saved!");
         }
     }
-    @GetMapping("/get-all-users")
+    @GetMapping
     public ResponseEntity<List<Users>> getAllUsers()
     {
         List<Users>  usersList= iUser.getAllUsers();
