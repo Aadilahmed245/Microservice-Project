@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Rating {
-    private Integer id;
+    private Integer ratingId;
     private Integer userId;
     private Integer hotelId;
     private Integer rating;
+    private Hotel hotel;
 }

@@ -26,4 +26,9 @@ public class RatingImpl implements IRating{
     public Rating getRating(Integer id) {
         return ratingRepo.findById(id).get();
     }
+
+    @Override
+    public List<Rating> getRatingByUserId(Integer userId) {
+       return  ratingRepo.findByUserId(userId);
+    }
 }

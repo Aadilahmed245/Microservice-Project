@@ -31,6 +31,18 @@ public class RatingController {
         List<Rating> ratings =   iRating.getAllRatings();
         return ResponseEntity.status(HttpStatus.OK).body(ratings);
     }
+    @GetMapping("get-rating-by-userid")
+    public ResponseEntity<List<Rating>> getRatingByUserId(@RequestParam Integer id)
+    {
+        List<Rating> rating = iRating.getRatingByUserId(id);
+        if(rating!=null)
+        {
+            return ResponseEntity.status(HttpStatus.OK).body(rating);
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(rating);
+        }
+    }
     @GetMapping("/get-rating")
     public ResponseEntity<Rating> getAllRatings(@RequestParam Integer id)
     {
