@@ -36,6 +36,7 @@ public class RatingController {
     public ResponseEntity<List<Rating>> getRatingByUserId(@RequestParam Integer id)
     {
         List<Rating> rating = iRating.getRatingByUserId(id);
+        System.out.println(rating);
         if(rating!=null)
         {
             return ResponseEntity.status(HttpStatus.OK).body(rating);

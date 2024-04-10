@@ -1,5 +1,6 @@
 package com.project.service.UserService.service;
 
+//import com.project.service.UserService.external.services.HotelService;
 import com.project.service.UserService.model.Hotel;
 import com.project.service.UserService.model.Rating;
 import com.project.service.UserService.model.Users;
@@ -22,6 +23,8 @@ public class UserImpl implements IUser{
     private UserRepo userRepo;
     @Autowired
     private RestTemplate restTemplate;
+//    @Autowired
+//    private HotelService hotelService;
 
     private Logger logger= LoggerFactory.getLogger(UserImpl.class);
     @Override
@@ -38,9 +41,11 @@ public class UserImpl implements IUser{
     @Override
     public Users findById(Integer id) {
        Users user= userRepo.findById(id).get();
+       logger.info("user info={}, userId={}",user,user.getUserId());
 
         // getForObject return only object
-        Rating[] ratingOfUser = restTemplate.getForObject("http://localhost:8083/get-rating-by-userid?id="+user.getUserId() , Rating[].class);
+        Rating[]  ratingOfUser = restTemplate.getForObject("http://localhost:8083/ratings/get-rating-by-userid?id="+user.getUserId(), Rating[].class);
+        logger.info("---------------------");
 
         List<Rating> ratingListOfUser= Arrays.stream(ratingOfUser).collect(Collectors.toList());
         logger.info("{}",ratingListOfUser);
@@ -49,10 +54,11 @@ public class UserImpl implements IUser{
 
         List<Rating> ratingsList = ratingListOfUser.stream().map(rating -> {
 
-                    ResponseEntity<Hotel> responseEntity = restTemplate.getForEntity("http://localhost:8082/get-hotel-by-id?id="+rating.getHotelId(),Hotel.class);
+                    ResponseEntity<Hotel> responseEntity = restTemplate.getForEntity("http://localhost:8082/hotels/get-hotel-by-id?id="+rating.getHotelId(),Hotel.class);
                     Hotel hotel = responseEntity.getBody();
                     logger.info("{}",responseEntity.getStatusCode());
                     rating.setHotel(hotel);
+
                     return  rating;
                 }).collect(Collectors.toList());
         user.setRatings(ratingsList);
