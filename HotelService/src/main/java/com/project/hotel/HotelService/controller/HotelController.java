@@ -8,9 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
-
 @RestController
+@RequestMapping("/hotels")
 public class HotelController {
     @Autowired
     private IHotel iHotel;
@@ -26,7 +25,7 @@ public class HotelController {
            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Hotel not saved Successfully !!!");
        }
     }
-    @GetMapping("/get-all-hotels")
+    @GetMapping
     public ResponseEntity<List<Hotel>> getAllHotels()
     {
         List<Hotel> hotelList=  iHotel.getAllHotels();

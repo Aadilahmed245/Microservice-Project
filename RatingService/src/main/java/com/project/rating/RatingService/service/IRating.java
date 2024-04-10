@@ -10,4 +10,6 @@ public interface IRating {
     List<Rating> getAllRatings();
 
     Rating getRating(Integer id);
+
+    List<Rating> getRatingByUserId(Integer id);
 }
