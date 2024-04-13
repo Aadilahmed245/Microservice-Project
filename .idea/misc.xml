@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/HotelService/pom.xml" />
         <option value="$PROJECT_DIR$/RatingService/pom.xml" />
         <option value="$PROJECT_DIR$/ServiceRegistry/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/IdentifyServicef/pom.xml" />
         <option value="$PROJECT_DIR$/Identity-Service/pom.xml" />
       </list>
@@ -18,6 +19,10 @@
         <option value="$PROJECT_DIR$/IdentifyService/pom.xml" />
       </set>
     </option>
+=======
+      </list>
+    </option>
+>>>>>>> origin/Sub-Branch
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

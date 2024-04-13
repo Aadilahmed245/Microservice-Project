@@ -3,31 +3,14 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="HotelService" />
-        <module name="ServiceRegistry" />
-        <module name="UserService" />
-        <module name="RatingService" />
-        <module name="ApiGateway" />
-        <module name="Identity-Service" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="IdentifyService" target="21" />
+      <module name="ApiGateway" target="21" />
+      <module name="HotelService" target="21" />
+      <module name="Identity-Service" target="21" />
+      <module name="RatingService" target="21" />
+      <module name="ServiceRegistry" target="21" />
+      <module name="UserService" target="21" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ApiGateway" options="-parameters" />
-      <module name="HotelService" options="-parameters" />
-      <module name="IdentifyService" options="-parameters" />
-      <module name="Identity-Service" options="-parameters" />
-      <module name="RatingService" options="-parameters" />
-      <module name="ServiceRegistry" options="-parameters" />
-      <module name="UserService" options="-parameters" />
-    </option>
   </component>
 </project>
