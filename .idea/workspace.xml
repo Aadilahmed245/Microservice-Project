@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/java/com/project/apigateway/ApiGateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/java/com/project/apigateway/ApiGateway/ApiGatewayApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

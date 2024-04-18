@@ -23,9 +23,9 @@ public class AuthService {
         userCredentialRepo.save(credential);
         return "user added in database successfylly";
     }
-    public String generateToken(String username)
+    public String generateToken(String username,String userId)
     {
-        return jwtService.generateToken(username);
+        return jwtService.generateToken(username,userId);
     }
     public void validateToken(String token)
     {
